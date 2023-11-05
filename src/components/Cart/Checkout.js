@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import classes from "./Checkout.module.css";
+import { useRef, useState } from 'react';
+import classes from './Checkout.module.css';
 
-const isEmpty = (value) => value.trim() === "";
+const isEmpty = (value) => value.trim() === '';
 const isFiveChars = (value) => value.trim().length === 5;
 
 const Checkout = (props) => {
@@ -57,50 +57,52 @@ const Checkout = (props) => {
     <form className={classes.form} onSubmit={confirmHandler}>
       <div
         className={`${classes.control} ${
-          formInputValidity.name ? "" : classes.invalid
+          formInputValidity.name ? '' : classes.invalid
         }`}
       >
-        <label htmlFor="name">Your Name</label>
-        <input ref={nameInputRef} type="text" id="name" />
+        <label htmlFor='name'>Your Name</label>
+        <input ref={nameInputRef} type='text' id='name' />
         {!formInputValidity.name && (
           <p className={classes.error}>Please enter a valid Name</p>
         )}
       </div>
       <div
         className={`${classes.control} ${
-          formInputValidity.street ? "" : classes.invalid
+          formInputValidity.street ? '' : classes.invalid
         }`}
       >
-        <label htmlFor="street">Street</label>
-        <input ref={streetInputRef} type="text" id="street" />
+        <label htmlFor='street'>Street</label>
+        <input ref={streetInputRef} type='text' id='street' />
         {!formInputValidity.street && (
           <p className={classes.error}>Please enter a valid Street</p>
         )}
       </div>
       <div
         className={`${classes.control} ${
-          formInputValidity.postalCode ? "" : classes.invalid
+          formInputValidity.postalCode ? '' : classes.invalid
         }`}
       >
-        <label htmlFor="postal">Postal Code</label>
-        <input ref={postalInputRef} type="text" id="postal" />
+        <label htmlFor='postal'>Postal Code</label>
+        <input ref={postalInputRef} type='text' id='postal' />
         {!formInputValidity.postalCode && (
-          <p className={classes.error}>Please enter a valid Postal Code</p>
+          <p className={classes.error}>
+            Please enter a valid Postal Code 5 numbers
+          </p>
         )}
       </div>
       <div
         className={`${classes.control} ${
-          formInputValidity.city ? "" : classes.invalid
+          formInputValidity.city ? '' : classes.invalid
         }`}
       >
-        <label htmlFor="city">City</label>
-        <input ref={cityInputRef} type="text" id="city" />
+        <label htmlFor='city'>City</label>
+        <input ref={cityInputRef} type='text' id='city' />
         {!formInputValidity.city && (
           <p className={classes.error}>Please enter a valid City</p>
         )}
       </div>
       <div className={classes.actions}>
-        <button type="button" onClick={props.onCancel}>
+        <button type='button' onClick={props.onCancel}>
           Cancel
         </button>
         <button className={classes.submit}>Confirm</button>
